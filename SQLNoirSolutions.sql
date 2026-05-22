@@ -26,3 +26,16 @@ and transcript is not null;
 --97	Rico Delgado	I couldn't help it. I snapped and took the record.
 
 --so the answer is Rico Delgado
+
+--case 3 solution
+
+select * from crime_scene where location = 'Coral Bay Marina' and date ='19860814';
+select * from person where name like '%ul%' and name like '%ez';
+select * from person where address like '%Ocean Drive';
+select * from interviews where person_id in(101,102);
+
+select * from hotel_checkins where check_in_date = 19860813 and hotel_name like '%Sunset%';
+
+select surveillance_records.person_id, surveillance_records.suspicious_activity from hotel_checkins join surveillance_records on hotel_checkins.id = surveillance_records.hotel_checkin_id where check_in_date = 19860813 and hotel_name like '%Sunset%' and suspicious_activity IS NOT NULL
+
+select confession from confessions where confessions.person_id = 8
