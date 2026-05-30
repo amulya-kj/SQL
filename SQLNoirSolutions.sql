@@ -39,3 +39,16 @@ select * from hotel_checkins where check_in_date = 19860813 and hotel_name like 
 select surveillance_records.person_id, surveillance_records.suspicious_activity from hotel_checkins join surveillance_records on hotel_checkins.id = surveillance_records.hotel_checkin_id where check_in_date = 19860813 and hotel_name like '%Sunset%' and suspicious_activity IS NOT NULL
 
 select confession from confessions where confessions.person_id = 8
+
+--case 4 solution
+
+select * from crime_scene where location = 'Fontainebleau Hotel';
+
+select * from guest where occupation = 'Actor' or (occupation = 'Consultant' and name like '%an %');
+select w.id, clue from witness_statements w join guest g on w.guest_id = g.id where g.occupation = 'Actor' or (g.occupation = 'Consultant' and g.name like '%an %');
+select * from attire_registry a join marina_rentals m on m.renter_guest_id = a.guest_id join guest g on m.renter_guest_id = g.id where a.note = 'navy suit, white tie' and m.dock_number = 3 and invitation_code like '%r';
+select * from marina_rentals where dock_number = 3;
+select * from final_interviews where guest_id = 105;
+select name from guest where id = 105;
+
+--case 5 solution
